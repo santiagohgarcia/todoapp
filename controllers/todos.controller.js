@@ -83,3 +83,22 @@ exports.removeTodo = async function(req, res, next){
     }
 
 }
+
+exports.getTodo = async function(req, res, next){
+
+    var id = req.params.id;
+
+    try{
+    
+        var todo = await TodoService.getTodo(id)
+        
+        // Return the todos list with the appropriate HTTP Status Code and Message.
+        return res.status(200).json({status: 200, data: todo, message: "Succesfully Todos Recieved"});
+        
+    }catch(e){
+        
+        //Return an Error Response Message with Code and the Error Message.
+        return res.status(400).json({status: 400, message: e.message});
+        
+    }
+}

@@ -97,3 +97,23 @@ exports.deleteTodo = async function(id){
         throw Error("Error Occured while Deleting the Todo")
     }
 }
+
+exports.getTodo = async function(id){
+
+    try{
+        //Find the old Todo Object by the Id
+        var todo = await ToDo.findById(id);
+    }catch(e){
+        throw Error("Error occured while Finding the Todo")
+    }
+
+    // If no old Todo Object exists return false
+    if(!todo){
+        return false;
+    }
+
+    console.log(todo)
+
+    return todo;
+
+}
