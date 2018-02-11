@@ -20,8 +20,6 @@ router.put('/', ToDoController.updateTodo)
 
 router.delete('/:id',ToDoController.removeTodo)
 
-router.get('/statuses', StatusesController.getStatuses)
-
 
 // Export the Router
 

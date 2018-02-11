@@ -10,5 +10,13 @@ var StatusesController = require('../../controllers/statuses.controller');
 
 router.get('/', StatusesController.getStatuses)
 
+router.get('/:id',StatusesController.getStatus)
+
+router.post('/', StatusesController.createStatus)
+
+router.put('/', StatusesController.updateStatus)
+
+router.delete('/:id',StatusesController.removeStatus)
+
 // Export the Router
 module.exports = router;
